@@ -6,6 +6,7 @@ export const getAllPosts = (state) => state.posts;
 
 
 
+
 const subreducers = {
   posts: postsReducer
 }

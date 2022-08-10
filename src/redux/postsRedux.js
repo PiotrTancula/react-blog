@@ -1,7 +1,6 @@
 //selectors
 
-export const getPostById = ({posts}, postId) => posts.find(post => post.id === postId);
-
+export const getPostById = ({ posts }, postId) => posts.filter((post) => post.id === postId);
 // actions
 const createActionName = actionName => `app/posts/${actionName}`;
 

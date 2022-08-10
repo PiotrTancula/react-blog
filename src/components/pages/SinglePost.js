@@ -13,7 +13,6 @@ const SinglePost = (props) => {
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
   console.log(currentPost);
-
   return (
 
 
@@ -27,17 +26,13 @@ const SinglePost = (props) => {
               <Card.Text>
                 {props.shortDescription}
               </Card.Text>
-              <Link to={`/post/${props.id}`}>
+              {/* <Link to={`/post/${props.id}`}>
                 <Button variant="primary">Readmore</Button>
-              </Link>
+              </Link> */}
+               <Button href={`/post/${props.id}`}>Read more</Button>
             </Card.Body>
           </Card>
         </Col>
-
-
-
-
-
 
   )
 

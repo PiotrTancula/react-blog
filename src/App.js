@@ -9,6 +9,7 @@ import Header from './components/views/Header';
 import Footer from './components/views/Footer';
 import { Container } from 'react-bootstrap'
 import InsideSinglePost from './components/pages/InsideSinglePost';
+import Posts from './components/features/Posts';
 
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/post/:postId" element={<SinglePost/>}/> */}
           <Route path="/post/:postId" element={<InsideSinglePost/>}/>
+          {/* <Route path="/post/:postId/InsideSinglePost" element={<InsideSinglePost/>}/> */}
           <Route path="/post/add" element={<PostAdd />} />
-          <Route path="/post/edit/:id" element={<PostEdit />} />
+          <Route path="/post/edit/:postId" element={<PostEdit />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
