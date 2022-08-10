@@ -1,11 +1,13 @@
-
+import Posts from '../features/Posts';
 
 const Home = () => {
 
 
   return (
+  <>
 
-    <div>Home</div>
+    <Posts />
+  </>
   )
 
 }
