@@ -14,6 +14,8 @@ const SinglePost = (props) => {
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
 
+
+
   console.log(currentPost);
   return (
     <Col  xs='12' md='6' lg='4'>

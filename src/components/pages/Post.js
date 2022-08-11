@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { getPostById } from '../../redux/postsRedux';
 import { useSelector } from 'react-redux';
@@ -13,6 +13,10 @@ const Post = () => {
 
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
+
+  if (!postId) return <Navigate to='/' />;
+  if (!currentPost) return <Navigate to='/' />;
+
 
   console.log(currentPost);
   return (
