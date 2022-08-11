@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { getPostById } from '../../redux/postsRedux';
 import { useSelector } from 'react-redux';
@@ -14,8 +14,9 @@ const SinglePost = (props) => {
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
 
-
-
+  // if (!currentPost) {
+  //   return <Navigate to='/' />;
+  // }
   console.log(currentPost);
   return (
     <Col  xs='12' md='6' lg='4'>

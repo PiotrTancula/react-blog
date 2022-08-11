@@ -14,11 +14,10 @@ const Post = () => {
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
 
-  if (!postId) return <Navigate to='/' />;
-  if (!currentPost) return <Navigate to='/' />;
 
 
   console.log(currentPost);
+
   return (
 
 

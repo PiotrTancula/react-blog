@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../redux/postsRedux';
+import { Navigate } from 'react-router-dom';
 
 const ModalButton = (props) => {
 
@@ -15,7 +16,10 @@ const ModalButton = (props) => {
 
   const handleDeletePost = (e) => {
     e.preventDefault();
-    dispatch(deletePost( props.postId ));
+    dispatch(deletePost(props.postId));
+    handleClose();
+
+
   }
 
   return (

@@ -14,6 +14,8 @@ import ModalButton from '../common/ModalButton';
 
 const InsideSinglePost = () => {
 
+
+
   const [showModal, setShowModal] = useState(false);
 
 
@@ -22,15 +24,13 @@ const InsideSinglePost = () => {
   const currentPost = useSelector(state => getPostById(state, postId));
 
 
-  if (!postId) return <Navigate to='/' />;
-  if (!currentPost) return <Navigate to='/' />;
+
 
   const updateShowModal = () => {
     setShowModal(!showModal);
     console.log('dziala');
     console.log(showModal);
   }
-
 
   return (
     <>
