@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import SinglePost from './SinglePost';
 import Posts from '../features/Posts';
 import PostAdd from './PostAdd';
+import Post from './Post';
+
 
 const InsideSinglePost = () => {
 
@@ -18,8 +20,9 @@ const InsideSinglePost = () => {
     <>
       <h1>Single Post</h1>
       <div className='d-flex justify-content-center'>
-         <SinglePost key={currentPost.postId} {...currentPost} />
-        <Button className='col-1 align-self-start'variant='outline-success' href='/post/add'>Edit</Button>
+        <Post key={currentPost.postId} {...currentPost} />
+        <Button className='col-1 align-self-start  mx-2' variant='outline-info' href={`/post/edit/${postId}`} >Edit</Button>
+        <Button className='col-1 align-self-start'variant='outline-danger' href='/post/add'>Delete</Button>
     </div>
     </>
 
