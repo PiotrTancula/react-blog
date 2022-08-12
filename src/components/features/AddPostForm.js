@@ -28,7 +28,7 @@ const AddPostForm = () => {
 
   return (
     <>
-      <div className="w-50 mx-auto">
+      <div className="w-50 ps-5">
         <form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="title">
             <Form.Label>Title</Form.Label>
