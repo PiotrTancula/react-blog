@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../redux/postsRedux';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ModalButton = (props) => {
 
@@ -13,13 +13,13 @@ const ModalButton = (props) => {
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleDeletePost = (e) => {
     e.preventDefault();
     dispatch(deletePost(props.postId));
     handleClose();
-
-
+    navigate('/');
   }
 
   return (
@@ -36,7 +36,7 @@ const ModalButton = (props) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Are you sure ?{props.showmodal}</Modal.Title>
+          <Modal.Title>Are you sure?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           Are you sure you want to remove this post from the app?

@@ -1,14 +1,13 @@
 import { useSelector } from "react-redux";
 import { getAllPosts } from "../../redux/store";
-import SinglePost from '../pages/SinglePost';
-import { Container, Col, Row, Button } from "react-bootstrap";
+import SinglePost from '../views/SinglePost';
+import { Container, Row, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 
 const Posts = () => {
 
   const posts = useSelector(getAllPosts);
-
 
   return (
     <>
@@ -20,7 +19,7 @@ const Posts = () => {
       </Container>
       <Container className="d-flex justify-content-center flex-column">
         <Row>
-            {posts.map(post => <SinglePost key={post.id} {...post} />)}
+            {posts.map(post => <SinglePost key={post.id} {...post}/>)}
         </Row>
       </Container>
 

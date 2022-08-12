@@ -4,27 +4,20 @@ import { Link, NavLink, Navigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { getPostById } from '../../redux/postsRedux';
 import { useSelector } from 'react-redux';
-import SinglePost from './SinglePost';
+import SinglePost from '../views/SinglePost';
 import Posts from '../features/Posts';
 import PostAdd from './PostAdd';
-import Post from './Post';
+import Post from '../views/Post';
 import { useState } from 'react';
 import ModalButton from '../common/ModalButton';
 
 
 const InsideSinglePost = () => {
 
-
-
   const [showModal, setShowModal] = useState(false);
-
-
 
   const { postId } = useParams();
   const currentPost = useSelector(state => getPostById(state, postId));
-
-
-
 
   const updateShowModal = () => {
     setShowModal(!showModal);

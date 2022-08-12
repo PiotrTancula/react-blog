@@ -1,23 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Container, Row, Col } from "react-bootstrap";
-import { Link, Navigate } from 'react-router-dom';
-import { useParams } from 'react-router';
-import { getPostById } from '../../redux/postsRedux';
-import { useSelector } from 'react-redux';
-import InsideSinglePost from './InsideSinglePost';
-
-
+import { Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const SinglePost = (props) => {
-
-  const { postId } = useParams();
-  const currentPost = useSelector(state => getPostById(state, postId));
-
-  // if (!currentPost) {
-  //   return <Navigate to='/' />;
-  // }
-  console.log(currentPost);
   return (
     <Col  xs='12' md='6' lg='4'>
       <Card >
@@ -28,10 +14,9 @@ const SinglePost = (props) => {
           <Card.Text>
             {props.shortDescription}
           </Card.Text>
-          {/* <Link to={`/post/${props.id}`}>
+          <Link to={`/post/${props.id}`}>
             <Button variant="primary">Readmore</Button>
-          </Link> */}
-            <Button href={`/post/${props.id}`}>Read more</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Col>
