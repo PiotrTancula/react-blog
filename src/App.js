@@ -10,6 +10,7 @@ import Footer from './components/views/Footer';
 import { Container } from 'react-bootstrap'
 import InsideSinglePost from './components/pages/InsideSinglePost';
 import Posts from './components/features/Posts';
+import EditPostForm from './components/features/EditPostForm';
 
 
 function App() {
