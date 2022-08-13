@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import shortid from "shortid";
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 
   const PostForm = ({ action, actionText, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
@@ -9,10 +11,12 @@ import shortid from "shortid";
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
 
+    // const { postId } = useParams();
+
     const handleSubmit = (e) => {
 
       e.preventDefault();
-      action({ title, author, publishedDate, shortDescription, content, id:shortid() });
+      action({ title, author, publishedDate, shortDescription, content });
 
     }
   return (
@@ -39,7 +43,9 @@ import shortid from "shortid";
           <Form.Label>Main content</Form.Label>
           <Form.Control as="textarea" rows={4} value={content} onChange={ e => setContent(e.target.value) }/>
         </Form.Group>
-        <Button type="submit" variant="primary">{actionText}</Button>
+        <Link to={`/`}>
+          <Button type="submit" variant="primary" >{actionText}</Button>
+        </Link>
       </Form>
 
     </div>
