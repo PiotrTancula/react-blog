@@ -43,9 +43,9 @@ import { useParams } from 'react-router';
           <Form.Label>Main content</Form.Label>
           <Form.Control as="textarea" rows={4} value={content} onChange={ e => setContent(e.target.value) }/>
         </Form.Group>
-        <Link to={`/`}>
+
           <Button type="submit" variant="primary" >{actionText}</Button>
-        </Link>
+
       </Form>
 
     </div>

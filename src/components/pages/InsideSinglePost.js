@@ -30,7 +30,9 @@ const InsideSinglePost = () => {
       <h1>Single Post</h1>
       <div className='d-flex justify-content-center w-50 mx-auto'>
         <Post key={currentPost.postId} {...currentPost} />
-        <Button className=' align-self-start w-25  mx-2' variant='outline-info' href={`/post/edit/${postId}`} >Edit</Button>
+        <Link to={`/post/edit/${postId}`}>
+          <Button className=' align-self-start w-75  mx-5' variant='outline-info'  >Edit</Button>
+        </Link>
         {/* <Button className='col-1 align-self-start'variant='outline-danger'  showmodal={showModal} onClick={updateShowModal}>Delete</Button> */}
         <ModalButton showmodal={showModal} updateshowmodal={updateShowModal} postId={postId} />
       </div>
