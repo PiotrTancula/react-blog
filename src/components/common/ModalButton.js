@@ -25,7 +25,7 @@ const ModalButton = (props) => {
   return (
 
     <>
-      <Button  className=' align-self-start w-25 mx-5'variant='outline-danger' onClick={handleShow}>
+      <Button  className=' align-self-start w-50 mx-5'variant='outline-danger' onClick={handleShow}>
         Delete
       </Button>
 
