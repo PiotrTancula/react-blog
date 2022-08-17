@@ -7,6 +7,7 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { dateToStr } from "../../utils/dateToStr";
 
 
   const PostForm = ({ action, actionText, ...props }) => {
@@ -38,7 +39,8 @@ import "react-datepicker/dist/react-datepicker.css";
         </Form.Group>
         <Form.Group className="mb-3" controlId="published">
           <Form.Label>Published</Form.Label>
-          <Form.Control type="text " placeholder="Published date " value={publishedDate} onChange={ e => setPublishedDate(e.target.value) } />
+          <DatePicker selected={publishedDate} onChange={date => setPublishedDate(date)} />
+          {/* <Form.Control type="text " placeholder="Published date " value={publishedDate} onChange={ e => setPublishedDate(e.target.value) } /> */}
         </Form.Group>
         <Form.Group className="mb-3" controlId="shortdescription">
           <Form.Label>Short description</Form.Label>

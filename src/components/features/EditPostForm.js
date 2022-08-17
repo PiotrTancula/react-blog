@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import { editPost } from '../../redux/postsRedux';
 import { getPostById } from '../../redux/postsRedux';
 import shortid from 'shortid';
+import { dateToStr } from '../../utils/dateToStr';
 
 const EditPostForm = (props) => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const EditPostForm = (props) => {
 
   return (
     <>
-    <PostForm action={handleSubmit} actionText='Edit post'  title={post.title} author={post.author} publishedDate={post.publishedDate} shortDescription={post.shortDescription} content={post.content}/>
+    <PostForm action={handleSubmit} actionText='Edit post'  title={post.title} author={post.author} publishedDate={dateToStr(post.publishedDate)} shortDescription={post.shortDescription} content={post.content}/>
     </>
   );
 };
