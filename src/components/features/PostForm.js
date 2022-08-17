@@ -3,6 +3,11 @@ import { Form, Button } from "react-bootstrap";
 import shortid from "shortid";
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
+import ReactQuill, { Quill } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
   const PostForm = ({ action, actionText, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
@@ -21,7 +26,7 @@ import { useParams } from 'react-router';
     }
   return (
 
-    <div className="w-100 ps-5">
+    <div className="w-100 ps-5" >
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="title">
           <Form.Label>Title</Form.Label>
@@ -40,8 +45,9 @@ import { useParams } from 'react-router';
           <Form.Control as="textarea" rows={3} value={shortDescription} onChange={ e => setShortDescription(e.target.value) }/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="maincontent">
-          <Form.Label>Main content</Form.Label>
-          <Form.Control as="textarea" rows={4} value={content} onChange={ e => setContent(e.target.value) }/>
+          <Form.Label >Main content</Form.Label>
+          {/* <Form.Control as="textarea" rows={4} value={content} onChange={ e => setContent(e.target.value) }/> */}
+          <ReactQuill    theme="snow" rows={4} value={content} onChange={setContent} />
         </Form.Group>
 
           <Button type="submit" variant="primary" >{actionText}</Button>

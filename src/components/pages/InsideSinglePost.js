@@ -28,8 +28,8 @@ const InsideSinglePost = () => {
   return (
     <>
       <h1>Single Post</h1>
-      <div className='d-flex justify-content-center w-50 mx-auto'>
-        <Post key={currentPost.postId} {...currentPost} />
+      <div   className='d-flex justify-content-center w-50 mx-auto'>
+        <Post key={currentPost.postId} {...currentPost} dangerouslySetInnerHTML={{ __html: currentPost.content }}/>
         <Link to={`/post/edit/${postId}`}>
           <Button className=' align-self-start w-50  mx-5' variant='outline-info'  >Edit</Button>
         </Link>

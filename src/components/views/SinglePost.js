@@ -17,6 +17,7 @@ const SinglePost = (props) => {
           <Link to={`/post/${props.id}`}>
             <Button variant="primary">Readmore</Button>
           </Link>
+
         </Card.Body>
       </Card>
     </Col>
