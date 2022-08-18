@@ -12,6 +12,7 @@ import InsideSinglePost from './components/pages/InsideSinglePost';
 import Posts from './components/features/Posts';
 import EditPostForm from './components/features/EditPostForm';
 import Categories from './components/views/Categories';
+import InsideSingleCategory from './components/pages/InsideSingleCategory';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/post/add" element={<PostAdd />} />
           <Route path="/post/edit/:postId" element={<PostEdit />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/:categoryId" element={<InsideSingleCategory />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
