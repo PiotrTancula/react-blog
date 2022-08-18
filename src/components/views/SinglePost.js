@@ -12,6 +12,7 @@ const SinglePost = (props) => {
           <Card.Title>{props.title}</Card.Title>
           <Card.Subtitle className="fw-bold">Author: <span className='fw-normal'>{props.author}</span></Card.Subtitle>
           <Card.Subtitle className="fw-bold">Published: <span className='fw-normal'>{dateToStr(props.publishedDate)}</span></Card.Subtitle>
+          <Card.Subtitle className="fw-bold">Category: <span className='fw-normal'>{props.category}</span></Card.Subtitle>
           <Card.Text>
             {props.shortDescription}
           </Card.Text>

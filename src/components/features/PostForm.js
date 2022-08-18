@@ -9,6 +9,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { dateToStr } from "../../utils/dateToStr";
 import { useForm } from "react-hook-form";
+import Posts from "./Posts";
+import { useSelector } from "react-redux";
+
 
 
   const PostForm = ({ action, actionText, ...props }) => {
@@ -17,11 +20,17 @@ import { useForm } from "react-hook-form";
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
+    const [category,setCategory] = useState(props.category || '');
     const [contentError, setContentError] = useState(false);
     const [dateError, setDateError] = useState(false);
     const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
     // const { postId } = useParams();
+
+    const postCategories = useSelector(state =>  state.postsCategory );
+    console.log(postCategories);
+
+    // const categoriesForTheSelectField = postCategories.map(category => <option key={category.id} value={category.category}>{category.description}</option>)
 
     const handleSubmit = () => {
 
@@ -29,7 +38,7 @@ import { useForm } from "react-hook-form";
       setContentError(!content)
       setDateError(!publishedDate)
       if(content && publishedDate) {
-        action({ title, author, publishedDate, shortDescription, content })
+        action({ title, author, publishedDate,category, shortDescription, content })
       }
     }
 
@@ -55,6 +64,16 @@ import { useForm } from "react-hook-form";
           <DatePicker selected={publishedDate} onChange={date => setPublishedDate(date)} />
           {/* <Form.Control type="text " placeholder="Published date " value={publishedDate} onChange={ e => setPublishedDate(e.target.value) } /> */}
           {dateError && <small className="d-block form-text text-danger mt-2">Date can't be empty</small>}
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="category">
+          <Form.Label>Category</Form.Label>
+            <Form.Select  value={category} onChange={e => setCategory(e.target.value)} aria-label="Default select example">
+              <option>Select category</option>
+              {postCategories.map(category => <option key={category.id} >{category.description}</option>)}
+
+
+          </Form.Select>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="shortdescription">

@@ -8,7 +8,9 @@ export const getAllPosts = (state) => state.posts;
 
 
 const subreducers = {
-  posts: postsReducer
+  posts: postsReducer,
+  postsCategory: postsReducer
+
 }
 
 const reducer = combineReducers(subreducers);

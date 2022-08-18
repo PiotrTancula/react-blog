@@ -11,9 +11,13 @@ import { Container } from 'react-bootstrap'
 import InsideSinglePost from './components/pages/InsideSinglePost';
 import Posts from './components/features/Posts';
 import EditPostForm from './components/features/EditPostForm';
+import Categories from './components/views/Categories';
 
 
 function App() {
+
+
+
   return (
     <Container>
       <Header />
@@ -23,6 +27,7 @@ function App() {
           {/* <Route path="/post/:postId/InsideSinglePost" element={<InsideSinglePost/>}/> */}
           <Route path="/post/add" element={<PostAdd />} />
           <Route path="/post/edit/:postId" element={<PostEdit />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

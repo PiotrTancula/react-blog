@@ -25,7 +25,7 @@ const EditPostForm = (props) => {
 
   return (
     <>
-    <PostForm action={handleSubmit} actionText='Edit post'  title={post.title} author={post.author} publishedDate={post.publishedDate} shortDescription={post.shortDescription} content={post.content}/>
+    <PostForm action={handleSubmit} actionText='Edit post'  title={post.title} author={post.author} publishedDate={post.publishedDate} category={post.category} shortDescription={post.shortDescription} content={post.content}/>
     </>
   );
 };
