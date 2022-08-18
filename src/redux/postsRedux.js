@@ -4,7 +4,7 @@ import shortid from "shortid";
 
 export const getPostById = ({ posts }, postId) => posts.find((post) => post.id === postId);
 export const getPostsAllApartFromSelected = ({ posts }, postId) =>posts.filter((post) => post.id !== postId);
-export const getSingleCategory = ({posts}, categoryId) => posts.filter((post) => post.category === post.categoryId);
+export const getSingleCategory = ({posts}, categoryId) => posts.filter((post) => post.category === categoryId);
 // actions
 const createActionName = actionName => `app/posts/${actionName}`;
 const DELETE_POST = createActionName('DELETE_POST');
